@@ -15,6 +15,11 @@ import store from './store'
 @observer
 export default class Portrait extends Component {
   columns = [{
+    key: 'type',
+    title: '画像类型',
+    dataIndex: 'type',
+    render: t => (t ? '顾问' : '客户'),
+  }, {
     key: 'objName',
     title: '所属实体',
     dataIndex: 'objName',

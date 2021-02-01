@@ -73,6 +73,7 @@ class AddDrawer extends Component {
   // 提交
   submit = () => {
     this.formRef.current.validateFields().then(values => {
+      console.log(values)
       if (this.store.addstatus) {
         // values.objId = this.store.objId
         this.store.getAdd(values)
@@ -196,7 +197,6 @@ class AddDrawer extends Component {
 
     const detailType = list[0] ? (1 - list[0].type) : 0
     const disType = list[0] ? list[0].type : null
-
     return (
       <Drawer {...drawerProps}>
         {
@@ -242,7 +242,7 @@ class AddDrawer extends Component {
                       disabled={item.name === 'objId' && !addstatus}
                     >
                       {
-                        item.option.map(content => {
+                        item.option && item.option.map(content => {
                           return (
                             <Option
                               key={content.id}
@@ -288,7 +288,7 @@ class AddDrawer extends Component {
                             >
                               {
                                 existTablesList ? (
-                                  existTablesList && relTablesList.map(content => {
+                                  relTablesList && relTablesList.map(content => {
                                     for (let i = 0; i < existTablesList.length; i++) {
                                       if (existTablesList[i] && existTablesList[i].table === content.table) {
                                         return <Option disabled key={content.value} table={content.table} value={content.table}>{content.value}</Option>

@@ -48,7 +48,7 @@ class Store extends ListContentStore(io.getList) {
       runInAction(() => {
         this.detailObj = res
         this.objId = res.objId
-        this.eventTableInfo = res.eventTableInfo
+        this.eventTableInfo = res.eventTableInfo || []
 
         this.getTagList({id: this.objId})
         this.getCatList({id: this.objId})

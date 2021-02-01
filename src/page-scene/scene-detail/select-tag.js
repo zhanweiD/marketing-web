@@ -3,13 +3,10 @@ import {
   observable, action, toJS, computed,
 } from 'mobx'
 import {observer, Provider} from 'mobx-react'
-import {Button, Spin} from 'antd'
+import {Spin} from 'antd'
 
-import {Time} from '../../common/util'
 import {NoData, DetailHeader} from '../../component'
 
-import TrendTag from './trend-tag'
-import TrendApi from './trend-api'
 import TagList from '../tag-list'
 
 import Store from './store-select-tag'

@@ -197,11 +197,6 @@ export default class Frame extends Component {
                     showAnalyze && (
                       <SubMenu key="/analyze" icon={<PieChartOutlined />} title="群体分析">
                         {
-                          codeInProduct('analyze:channel:view') && (
-                            <Menu.Item key="/analyze/channel">渠道拓客</Menu.Item>
-                          )
-                        }
-                        {
                           codeInProduct('analyze:chinch:view') && (
                             <Menu.Item key="/analyze/clinch">成交分析</Menu.Item>
                           )
@@ -219,6 +214,11 @@ export default class Frame extends Component {
                         {
                           codeInProduct('analyze:purchase:view') && (
                             <Menu.Item key="/analyze/purchase">复购挖掘</Menu.Item>
+                          )
+                        }
+                        {
+                          codeInProduct('analyze:channel:view') && (
+                            <Menu.Item key="/analyze/channel">渠道拓客</Menu.Item>
                           )
                         }
                         {

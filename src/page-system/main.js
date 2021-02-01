@@ -8,7 +8,6 @@ import UserManage from './user-manage'
 import RoleManage from './role-manage'
 import Portrait from './user-portrait'
 import SystemLog from './system-log'
-import PushManage from './push-manage'
 
 const prePath = '/system'
 
@@ -33,11 +32,6 @@ export default () => {
       {
         codeInProduct('system:system-log:view') && (
           <Route exact path={`${prePath}/system-log`} component={SystemLog} />
-        )
-      }
-      {
-        codeInProduct('system:push-manage:view') && (
-          <Route exact path={`${prePath}/push-manage`} component={PushManage} />
         )
       }
       {/* <Redirect strict to={`${prePath}/role-manage`} /> */}
