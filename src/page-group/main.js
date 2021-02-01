@@ -7,12 +7,6 @@ import UnitList from './unit-list'
 import RuleCreate from './rule-create'
 import RuleDetail from './rule-detail'
 
-import GroupAnalyze from './group-analyze'
-import GroupContrast from './group-contrast'
-
-import PortrayalLabel from './portrayal'
-import Explain from './config-explain'
-
 import {codeInProduct} from '../common/util'
 
 const prePath = '/group'
@@ -39,20 +33,6 @@ export default () => {
 
       {/* 个体列表 */}
       <Route exact path={`${prePath}/manage/unit/:id/:queryDate`} component={UnitList} />
-
-      {/* 群体分析 */}
-      {/* <Route exact path={`${prePath}/analyze/:groupId?/:objId?/:projectId?/:time?`} component={GroupAnalyze} /> */}
-
-      {/* 群体对比 */}
-      {/* <Route exact path={`${prePath}/contrast`} component={GroupContrast} /> */}
-
-      {/* 微观画像 */}
-      {/* <Route exact path={`${prePath}/portrayal/:objId?/:mainLabel?/:projectId?`} component={PortrayalLabel} /> */}
-
-      {/* 配置说明 */}
-      {/* <Route exact path={`${prePath}/explain`} component={Explain} /> */}
-
-      {/* <Redirect strict to={`${prePath}/manage`} /> */}
     </Switch>
   )
 }

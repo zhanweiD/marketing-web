@@ -1,20 +1,17 @@
-import {Component, Fragment, useEffect} from 'react'
+import {Component} from 'react'
 import {action, toJS} from 'mobx'
 import {observer} from 'mobx-react'
-import OnerFrame from '@dtwave/oner-frame'
 import {
-  Tabs, Button, Icon, Spin, Alert,
+  Spin, Alert,
 } from 'antd'
 
 import {Time} from '../../common/util'
-import {Authority, Tag, DetailHeader, TabRoute} from '../../component'
+import {Tag, DetailHeader, TabRoute} from '../../component'
 import ModalEditScene from '../scene/modal'
 
 import SelectTag from './select-tag'
 
 import store from './store-scene-detail'
-
-const {TabPane} = Tabs
 
 @observer
 class SceneDetail extends Component {
@@ -116,16 +113,6 @@ class SceneDetail extends Component {
         <Spin spinning={store.loading}>
           <DetailHeader
             name={name}
-            // name={(
-            //   <Fragment>
-            //     <span>{name}</span>
-            //     {/* <AuthBox code="asset_tag_project_occ_operator" myFunctionCodes={store.functionCodes} isButton={false}> */}
-            //     {
-            //       !used && <Icon className="ml8" type="edit" onClick={this.sceneDetailVisible} style={{color: 'rgba(0,0,0, .45)'}} />
-            //     }
-            //     {/* </AuthBox> */}
-            //   </Fragment>
-            // )}
             descr={descr}
             btnMinWidth={230}
             baseInfo={baseInfo}
