@@ -1,0 +1,51 @@
+
+.noborder-input
+  width 100%
+  display: inline-block
+  position:relative
+  label
+    //color:rgba(0, 0, 0, 0.25)
+    color: #c6dee9
+    font-size:14px
+    font-weight:normal
+    position:absolute
+    pointer-events:none
+    left:5px
+    top:8px
+    transition:0.2s ease all
+
+
+  input
+    font-size:16px
+    display:block
+    line-height: 32px
+    border:none
+    color: rgba(0, 0, 0, 0.75)
+  // 处理firfox下required导致的红色边框
+  input:required
+    box-shadow: none
+  input:focus
+    outline:none
+  // 处理chrome回填产生的黄色背景
+  input:-webkit-autofill
+    box-shadow: 0 0 0 30px white inset
+    -webkit-text-fill-color: rgba(0, 0, 0, 0.75)
+  input::input-placeholder
+    color:rgba(0, 0, 0, 0.25)
+    font-size: 14px
+  //自动填充后将label隐藏，防止placehoder和回填用户名密码重叠
+  input:-webkit-autofill ~ label
+    display: none
+
+  /* active state */
+  input:focus ~ label, input:valid ~ label
+    animation-name: fadeOutLeft2
+    animation-duration: 0.5s
+    animation-fill-mode: both
+
+@keyframes fadeOutLeft2
+  from
+    opacity: 1
+  to
+    opacity: 0
+    transform: translate3d(-10%, 0, 0)
