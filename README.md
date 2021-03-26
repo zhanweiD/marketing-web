@@ -1,3 +1,3 @@
-# taghub-web
+# marketing-web
 
-客户中台前端项目
+自动化营销工具前端项目

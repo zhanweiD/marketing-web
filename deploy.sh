@@ -4,8 +4,8 @@
 # 打 提测包
 # eg: sh ./deploy.sh tag_name
 
-package_name="taghub"
-tar_build_name="taghub"
+package_name="marketing"
+tar_build_name="marketing"
 # 打包命令
 npm run build
 
