@@ -8,7 +8,7 @@ import {
 import * as dict from './common/dict'
 import './common/util.styl'
 
-import Login from './page-login'
+import Marketing from './page-marketing'
 
 
 const njkData = {
@@ -22,7 +22,8 @@ function Entry() {
     <Router>
       <Switch>
         {/* 登录 */}
-        <Route path="/login" component={Login} />
+        <Route path="/marketing" component={Marketing} />
+        <Route path="/" component={Marketing} />
       </Switch>
     </Router>
   )

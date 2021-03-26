@@ -18,6 +18,7 @@
     "@ant-design/compatible": "^1.0.2",
     "@ant-design/icons": "4.1.0",
     "@dtwave/uikit": "3.0.0-alpha4",
+    "@dtwave/nemo-base-info": "1.0.9",
     "md5": "^2.2.1",
     "antd": "4.9.3",
     "autoprefixer": "9.4.7",
