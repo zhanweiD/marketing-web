@@ -8,15 +8,14 @@ import {Button, ConfigProvider, Drawer} from 'antd'
 
 import {ListContent} from '../component'
 import store from './store'
+import AddDrawer from './add-drawer'
 
-const Login = () => {
+const Marketing = () => {
   const [visible, setVisible] = useState(false)
 
-  const showDrawer = () => {
-    setVisible(true)
-  }
-  const onClose = () => {
-    setVisible(false)
+  const changeVisible = value => {
+    console.log(value)
+    setVisible(value)
   }
 
   const columns = [
@@ -43,7 +42,7 @@ const Login = () => {
     <div className="dfjs">
       <Button 
         type="primary" 
-        onClick={showDrawer}
+        onClick={() => changeVisible(true)}
       >
         创建任务
       </Button>
@@ -56,23 +55,6 @@ const Login = () => {
     store, // 必填属性
   }
 
-  const modalConfig = {
-    title: '创建任务',
-    visible,
-    maskClosable: false,
-    onClose,
-    footer: [
-      <div className="bottom-button">
-        <Button className="mr8" onClick={onClose}>关闭</Button>
-        <Button type="primary" onClick={onClose}>确认</Button>
-      </div>,
-      
-    ],
-    width: 1120,
-    destroyOnClose: true,
-  }
-  
-
   return (
     <ConfigProvider locale={zhCN}>
       <div
@@ -80,15 +62,14 @@ const Login = () => {
       >
         <div className="page-main pt16">
           <ListContent {...listConfig} />
-          <Drawer
-            {...modalConfig}
-          >
-            111
-          </Drawer>
+          <AddDrawer
+            visible={visible}
+            changeVisible={changeVisible}
+          />
         </div>
       </div>
     </ConfigProvider>
   )
 }
 
-export default Login
+export default Marketing

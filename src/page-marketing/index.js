@@ -1,5 +1,5 @@
 import {asyncComponent} from '../common/util'
-import './login.styl'
+import './index.styl'
 
 export default asyncComponent(async () => {
   try {
