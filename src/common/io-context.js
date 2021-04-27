@@ -6,8 +6,8 @@ import {Modal} from 'antd'
 const context = nattyFetch.context({
   urlPrefix: window.__keeper.apiPrefix,
   data: {
-    productId: window.__keeper.productId,
-    userAccount: localStorage.getItem('userAccount'),
+    // productId: window.__keeper.productId,
+    // userAccount: localStorage.getItem('userAccount'),
     // ...window.defaultParams,
   },
   mock: false,

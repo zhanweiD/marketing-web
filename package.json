@@ -17,9 +17,8 @@
   "devDependencies": {
     "@ant-design/compatible": "^1.0.2",
     "@ant-design/icons": "4.1.0",
-    "@dtwave/uikit": "3.0.0-alpha4",
     "@dtwave/nemo-base-info": "1.0.9",
-    "md5": "^2.2.1",
+    "@dtwave/uikit": "3.0.0-alpha4",
     "antd": "4.9.3",
     "autoprefixer": "9.4.7",
     "babel-core": "6.26.3",
@@ -55,6 +54,7 @@
     "less": "3.9.0",
     "less-loader": "4.1.0",
     "lodash": "4.17.11",
+    "md5": "^2.2.1",
     "mini-css-extract-plugin": "0.5.0",
     "mobx": "5.15.4",
     "mobx-react": "6.2.2",

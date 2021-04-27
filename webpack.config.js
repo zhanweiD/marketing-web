@@ -23,7 +23,7 @@ module.exports = {
     compress: true,
     inline: true,
     hot: true,
-    port: '9998',
+    port: '9997',
     host: '0.0.0.0',
     disableHostCheck: true,
     headers: {
@@ -32,8 +32,9 @@ module.exports = {
     noInfo: true,
     proxy: [
       {
-        context: ['/hub_api', '/hub_user_api'],
-        target: 'http://192.168.90.54',
+        context: ['/app', '/task'],
+        // target: '192.168.90.145:9001',
+        target: 'http://192.168.90.147',
         changeOrigin: true,
       },
     ],
