@@ -50,6 +50,13 @@ module.exports = {
     publicPath: isDev ? '/' : './',
     pathinfo: false,
   },
+  resolve: {
+    alias: {
+      '@util': path.resolve('src/common/util'),
+      '@common': path.resolve('src/common'),
+    },
+    extensions: ['.js', '.jsx', '.json'],
+  },
   optimization: {
     splitChunks: {
       cacheGroups: {
