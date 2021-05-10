@@ -46,19 +46,11 @@ const links = [
     id: 1,
     sourceId: 11,
     targetId: 12,
-    
     sourceNodeId: 1,
     targetNodeId: 2,
   },
   {
     id: 2,
-    sourceId: 11,
-    targetId: 14,
-    sourceNodeId: 1,
-    targetNodeId: 3,
-  },
-  {
-    id: 3,
     sourceId: 11,
     targetId: 14,
     sourceNodeId: 1,
@@ -77,6 +69,7 @@ const links = [
     targetId: 16,
     sourceNodeId: 3,
     targetNodeId: 5,
+
   },
 ]
 export {types, nodes, links}

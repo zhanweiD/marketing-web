@@ -55,6 +55,7 @@ const onFlowInit = instance => {
     ioType: '2',
   }])
 }
+
 const options = instance => {
   return ({
     className: 'dag-style',
@@ -90,7 +91,6 @@ const options = instance => {
       }, 0)
     },
     showCenter: false,
-
     // 双击节点触发事件
     onDoubleClick: node => {
       console.log(node)
