@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import {Button, Tooltip} from 'antd'
+import {Button} from 'antd'
 import {
   RedoOutlined, 
   ZoomInOutlined, 
@@ -15,6 +15,7 @@ import './index.styl'
 
 const Demo = () => {
   const [instance, setInstance] = useState(null)
+  const [isRender, setIsRender] = useState(false)
   const [isRun, setIsRun] = useState(false)
   const [nodeList, setNodeList] = useState(nodes)
   const [linkList, setLinkList] = useState(links)
@@ -29,7 +30,6 @@ const Demo = () => {
   const onZoomOut = () => {
     instance.zoomOut()
   }
-  
   // 开始拖动
   const onDragStart = ({nodeName, status, icon, ioType}, e) => {
     console.log(nodeName)
@@ -53,6 +53,7 @@ const Demo = () => {
   
   // 拖动结束
   const onDragEnd = e => {
+    console.log(e)
     // const {target} = e
     // target.style.border = 'solid 1px #49aede'
     // target.style.margin = '8px'
@@ -63,13 +64,15 @@ const Demo = () => {
     console.log(instance.getNodes())
   }
   
+  // 获取连线信息
   const getLinks = () => {
     console.log(instance.getLinks())
   }
 
+  // 运行
   const runDag = () => {
     setIsRun(true)
-    nodeList.forEach(item => {
+    instance.getNodes().forEach(item => {
       instance.setNodeStatus(1, 3)
       setTimeout(() => {
         instance.setNodeStatus(item.id, 3)
@@ -77,9 +80,10 @@ const Demo = () => {
     })
   }
 
+  // 停止
   const stopDag = () => {
     setIsRun(false)
-    nodeList.forEach(item => instance.setNodeStatus(item.id, 2))
+    instance.getNodes().forEach(item => instance.setNodeStatus(item.id, 2))
   }
 
   return (
@@ -108,36 +112,41 @@ const Demo = () => {
         </div>
       </div>
       <div>
-        <DAG
-          ref={e => setInstance(e)}
-          {...option(instance)}
-          links={linkList}
-          nodeList={nodeList}
-        />
+        {
+          isRender ? <div /> : (
+            <DAG
+              ref={e => setInstance(e)}
+              {...option({instance, nodeList, setIsRender, setLinkList})}
+              links={linkList}
+              nodeList={nodeList}
+            />
+          )
+        }
+        
       </div>
-      <div className="pa rt16 tp24">
+      <div className="pa rt16 tp24 dag-right">
         <span className="hand mr8">
-          <RedoOutlined style={{fontSize: '18px', color: 'rgba(0,0,0,.45)'}} />
+          <RedoOutlined className="icon-style" />
         </span>
         {
           !isRun ? (
             <span onClick={runDag} className="hand mr8">
-              <PlayCircleOutlined style={{fontSize: '18px', color: 'rgba(0,0,0,.45)'}} />
+              <PlayCircleOutlined className="icon-style" />
             </span>
           ) : (
             <span onClick={stopDag} className="hand mr8">
-              <PauseCircleOutlined style={{fontSize: '18px', color: 'rgba(0,0,0,.45)'}} />
+              <PauseCircleOutlined className="icon-style" />
             </span>
           )
         }
         <span onClick={onFixView} className="hand mr8">
-          <AimOutlined style={{fontSize: '18px', color: 'rgba(0,0,0,.45)'}} />
+          <AimOutlined className="icon-style" />
         </span>
         <span onClick={onZoomIn} className="hand mr8">
-          <ZoomInOutlined style={{fontSize: '18px', color: 'rgba(0,0,0,.45)'}} />
+          <ZoomInOutlined className="icon-style" />
         </span>
         <span onClick={onZoomOut} className="hand">
-          <ZoomOutOutlined style={{fontSize: '18px', color: 'rgba(0,0,0,.45)'}} />
+          <ZoomOutOutlined className="icon-style" />
         </span>
       </div>
     </div>

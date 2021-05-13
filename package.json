@@ -88,6 +88,6 @@
     "webpack-dev-server": "3.7.2"
   },
   "dependencies": {
-    "@dtwave/oner-dag": "^1.2.2-alpha6"
+    "@dtwave/oner-dag": "^1.2.1-alpha2"
   }
 }
